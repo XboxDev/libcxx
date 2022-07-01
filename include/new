@@ -158,7 +158,7 @@ _LIBCPP_FUNC_VIS new_handler get_new_handler() _NOEXCEPT;
 _LIBCPP_NORETURN _LIBCPP_FUNC_VIS void __throw_bad_alloc();  // not in C++ spec
 
 #if !defined(_LIBCPP_HAS_NO_LIBRARY_ALIGNED_ALLOCATION) && \
-    !defined(_LIBCPP_ABI_VCRUNTIME)
+    (!defined(_LIBCPP_ABI_VCRUNTIME) || defined(NXDK))
 #ifndef _LIBCPP_CXX03_LANG
 enum class _LIBCPP_ENUM_VIS align_val_t : size_t { };
 #else
